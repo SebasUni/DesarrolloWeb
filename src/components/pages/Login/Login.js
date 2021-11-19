@@ -56,7 +56,7 @@ export const Login = () => {
                         <input type="password" className="imput" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                     </div>
                     <div className="button">
-                        <button onClick={registro}>iniciasr</button>
+                        <button onClick={registro}>iniciassssr</button>
                         <h4> User Logged In: </h4>
                         {user?.email}
 
