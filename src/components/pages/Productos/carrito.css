@@ -1,0 +1,83 @@
+.lista{
+    display: inline-block;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.factura{
+    border-color: black;
+    background-color: #1c223736;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 30px;
+    margin-block-end: 30px;
+    border-radius: 10px;
+    
+}
+.Titulo-factura{
+    
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+
+}
+.pagar{
+    text-align: center;
+}
+.separador{
+    margin-top: 30px;
+    background-color:#1c223736 ;
+    height: 20px;
+    border-radius: 20px;
+    margin-block-end: 30px;
+}
+.Titulo_producto{
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    font-family: Verdana;
+}
+.Irpagar{
+    font-weight: bold;
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    margin-top: 30px;
+    border-radius: 30px;
+    margin-block-end: 30px;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+    background-color: rgb(211, 199, 33);
+    margin-left: 400px;
+}
+@media screen and (max-width: 1305px) {
+    .Irpagar{
+        font-weight: bold;
+        font-size: 20px;
+        width: 400px;
+        height: 50px;
+        margin-top: 30px;
+        border-radius: 30px;
+        margin-block-end: 30px;
+        box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+        background-color: rgb(211, 199, 33);
+        margin-left: 380px;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .Irpagar{
+        font-weight: bold;
+        font-size: 20px;
+        width: 200px;
+        height: 50px;
+        margin-top: 30px;
+        border-radius: 30px;
+        margin-block-end: 30px;
+        box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+        background-color: rgb(211, 199, 33);
+        margin-left: 90px;
+    }
+
+}
+
+

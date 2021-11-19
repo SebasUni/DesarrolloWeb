@@ -1,0 +1,54 @@
+.tarjeta{
+    width: 15cm;
+    width: 8cm;
+    border-radius: 50px; 
+    margin-top: 50px;
+    display: inline-block;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 10px;
+    margin-block-end: 20px;
+    margin-left:75px;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+}
+
+
+.image{
+    width: 280px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.comprar {
+   
+    width: 150px;
+    height: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: #1c2237;
+    margin-block-end: 10px;
+  
+}
+.comprar:hover{
+  
+    background-color: #1c22373f;
+    transition: all 0.2s ease-out;
+
+}
+.Text-Button{
+    color: rgb(255, 255, 255);
+}
+.Text-Button:hover{
+    color: #1c2237;
+}
+.info-Text{
+    text-align: center;
+   
+}
+.black{
+    color: black;
+    margin-block-end: 5px;
+}
