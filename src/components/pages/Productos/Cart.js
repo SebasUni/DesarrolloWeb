@@ -13,15 +13,9 @@ const Cart = ({cart , setCart,cantidad}) => {
                 producto={producto}
                 cart={cart}
                 setCart={setCart}
-                
                 />))
             ) }
-        
             </div>
-            
-           
-    
-        
     )
 }
 export default Cart;

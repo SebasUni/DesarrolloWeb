@@ -10,8 +10,6 @@ function Home() {
         <>
             <HeroSection {...homeObjOne}/>
             <HeroSection {...inf}/>
-            
-         
         </>
     )
 }

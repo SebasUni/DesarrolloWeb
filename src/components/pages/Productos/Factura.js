@@ -5,27 +5,23 @@ import Paypal_Check from './Paypal_Check'
 import {PDFExport} from '@progress/kendo-react-pdf'
 
 function Factura(props) {
-    const [total, setTotal]=useState(0);
-   const cart=props.location.data.cart
-   useEffect(() => {
+  const [total, setTotal]=useState(0);
+  const cart=props.location.data.cart
+  useEffect(() => {
     const handlesumar = () => {
       const sumar = cart.map((saldo) => parseFloat(saldo.presio *saldo.cantidad))
         .reduce((previous, current) => {
           return previous + current;
         }, 0);
       setTotal(sumar);
- 
     };
     handlesumar();
- 
   });
   const pdfExportComponent = useRef(null)
- 
     return (
       <div >
       <PDFExport ref={pdfExportComponent} paperSize="A4">
         <div className="container">
-          
             <h1 className="Titulo-factura">Factura</h1>
             <TableContainer className="factura">
               <Table>
@@ -42,15 +38,12 @@ function Factura(props) {
     <                   TableCell>{celda.name}</TableCell>
                         <TableCell>{celda.cantidad}</TableCell>
                         <TableCell>{celda.presio * celda.cantidad}</TableCell>
-                        
                     </TableRow>
-                    
                   ))}
                   <TableRow>
     <                   TableCell>Total</TableCell>
                         <TableCell></TableCell>
                         <TableCell>{total}</TableCell>
-                        
                     </TableRow>
                 </TableBody>
               </Table>
@@ -60,7 +53,6 @@ function Factura(props) {
             </div>
         </div>
         </PDFExport>
-        
       </div>
     )
 }

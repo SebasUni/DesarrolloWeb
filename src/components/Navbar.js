@@ -17,7 +17,6 @@ const closeMobileMeunu =()=>setClick(false)
         }else{
             setButton(true)
         }
-        
     }
     useEffect (()=>{
         showButton();
@@ -41,7 +40,6 @@ const closeMobileMeunu =()=>setClick(false)
                             Home
                         </Link>
                     </li>
-                   
                     <li className="nav-item">
                         <Link to='/Quienes-Somos' className="nav-links" onClick={closeMobileMeunu}>
                             Quienes somos
@@ -71,5 +69,5 @@ const closeMobileMeunu =()=>setClick(false)
         </IconContext.Provider>
         </>
     )
-} 
-export default Navbar 
+}
+export default Navbar

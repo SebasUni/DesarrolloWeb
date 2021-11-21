@@ -16,8 +16,7 @@ export const homeObjOne = {
     alt: 'Credit Card',
     path: '/Quienes-Somos',
     botton: true,
-    centrado:false
-    
+    centrado:false,
   };
   export const inf = {
     lightBg: true,
@@ -27,14 +26,12 @@ export const homeObjOne = {
     headline: 'ALUMINOS JOAL HS S.A.S',
     description:
     'Fabricamos utensilios de cocina en aluminio de excelente calidad a precios competitivos,'+ 
-     'prestando el mejor serivio y atención a todos nuestros clientes, asegurandonos cada de ser el numero 1 en el mercado',
+    'prestando el mejor serivio y atención a todos nuestros clientes, asegurandonos cada de ser el numero 1 en el mercado',
     buttonLabel: 'Contactanos',
     imgStart: 'start',
     img: 'images/empresa.JPG',
     alt: 'Credit Card',
     path: '/servicios',
     botton:false,
-    centrado: false
-    
+    centrado: false,
   };
- 

@@ -2,7 +2,6 @@
     color: #fff;
     padding: 100px 0 ;
     position: sticky;
-    
 }
 .dark{
     color: #37271c;
@@ -12,7 +11,7 @@
     margin-top: -50px;
     font-size: 18px;
     margin-left: 150px;
-} 
+}
 .izquierdo{
     margin-left: 75px;
 }
@@ -27,12 +26,11 @@
     float: right;
     margin-right: 200px;
     margin-top: -150px;
-    
 }
 .Redes{
-   margin-top: 10px;
-   display: inline-flex;
-   margin-left: 10px;
+    margin-top: 10px;
+    display: inline-flex;
+    margin-left: 10px;
 }
 .face{
     margin-left: 10px;
@@ -47,33 +45,28 @@
         margin-right: 40px;
         margin-top: -150px;
 
-       }
-       .textoinfo{
+    }
+    .textoinfo{
         margin-top: 15px;
         margin-left: 40px;
-    
     }
     .titulo{
         color:#f00946;
         margin-top: -50px;
         font-size: 18px;
         margin-left: 40px;
-    } 
+    }
 }
 @media screen and (max-width: 900px) {
-   
     .UbicacionImagen{
-     width: 350px;
-      height: 200px;
-     float: none;
-     margin-top: 20px;
-     
-      
+        width: 350px;
+        height: 200px;
+        float: none;
+        margin-top: 20px;
     }
     .textoinfo{
         margin-top: 15px;
         margin-left: 40px;
-    
     }
     .titulo{
         margin-left: 40px;

@@ -14,9 +14,9 @@ function HeroSection({
   img,        // la imagne
   alt,       //nombre de la imagen
   imgStart,  //ubicacion
-  path,     // a donde lo quiere mandar con el boton 
+  path,     // a donde lo quiere mandar con el boton
   botton, //si hay boton
- centrado 
+  centrado
 }) {
   return (
     <>
@@ -24,64 +24,61 @@ function HeroSection({
         className={lightBg ? 'home__hero-section' : 'home__hero-section darkBg'}
       >
         <div className='container'>
-          {centrado ? 
-          
-          <div className="centrado">
-                <div className='top-line'>{topLine}</div>
+          {centrado ?
+            <div className="centrado">
+              <div className='top-line'>{topLine}</div>
 
-                <h1 className={lightText ? 'heading' : 'heading dark'}>
-                  {headline}
-                </h1>
-                <p className={lightText ?'descripcion':'descripcion dark'}>
-                  {description}
-                </p>
-                {botton ?
+              <h1 className={lightText ? 'heading' : 'heading dark'}>
+                {headline}
+              </h1>
+              <p className={lightText ? 'descripcion' : 'descripcion dark'}>
+                {description}
+              </p>
+              {botton ?
                 <Link to={path}>
                   <Button buttonSize='btn--wide' buttonColor='blue'>
                     {buttonLabel}
                   </Button>
                 </Link> : ""}
-    
-          </div> 
-          :
-          <div
-            className='row home__hero-row'
-            style={{
-              display: 'flex',
-              flexDirection: imgStart === 'start' ? 'row-reverse' : 'row'
-            }}>
-            
-            <div className='col'>
-              <div className='home__hero-text-wrapper'>
-                <div className='top-line'>{topLine}</div>
-                <h1 className={lightText ? 'heading' : 'heading dark'}>
-                  {headline}
-                </h1>
-                <p
-                  className={
-                    lightTextDesc
-                      ? 'home__hero-subtitle'
-                      : 'home__hero-subtitle dark'
-                  }
-                >
-                  {description}
-                </p>
-                {botton ?<Link to={path}>
-                  <Button buttonSize='btn--wide' buttonColor='red'>
-                    {buttonLabel}
-                  </Button>
-                </Link> : ""}
+            </div>
+            :
+            <div
+              className='row home__hero-row'
+              style={{
+                display: 'flex',
+                flexDirection: imgStart === 'start' ? 'row-reverse' : 'row'
+              }}>
+              <div className='col'>
+                <div className='home__hero-text-wrapper'>
+                  <div className='top-line'>{topLine}</div>
+                  <h1 className={lightText ? 'heading' : 'heading dark'}>
+                    {headline}
+                  </h1>
+                  <p
+                    className={
+                      lightTextDesc
+                        ? 'home__hero-subtitle'
+                        : 'home__hero-subtitle dark'
+                    }
+                  >
+                    {description}
+                  </p>
+                  {botton ? <Link to={path}>
+                    <Button buttonSize='btn--wide' buttonColor='red'>
+                      {buttonLabel}
+                    </Button>
+                  </Link> : ""}
+                </div>
+              </div>
+              <div className='col'>
+                <div className='home__hero-img-wrapper'>
+                  <img src={img} alt={alt} className='home__hero-img' />
+                </div>
               </div>
             </div>
-            <div className='col'>
-              <div className='home__hero-img-wrapper'>
-                <img src={img} alt={alt} className='home__hero-img' />
-              </div>
-         </div>
-          </div>  
           }
         </div>
-            
+
 
       </div>
     </>

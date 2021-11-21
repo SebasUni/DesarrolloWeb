@@ -1,7 +1,7 @@
 .tarjeta{
     width: 15cm;
     width: 8cm;
-    border-radius: 50px; 
+    border-radius: 50px;
     margin-top: 50px;
     display: inline-block;
     flex-direction: row;
@@ -22,7 +22,6 @@
     margin-top: 20px;
 }
 .comprar {
-   
     width: 150px;
     height: 30px;
     border-width: 1px;
@@ -30,10 +29,8 @@
     border-radius: 10px;
     background-color: #1c2237;
     margin-block-end: 10px;
-  
 }
 .comprar:hover{
-  
     background-color: #1c22373f;
     transition: all 0.2s ease-out;
 
@@ -46,7 +43,6 @@
 }
 .info-Text{
     text-align: center;
-   
 }
 .black{
     color: black;

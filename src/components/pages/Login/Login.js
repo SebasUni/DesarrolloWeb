@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Login.css'
 import { auth } from '../../firebase/config'
 import { onAuthStateChanged, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
@@ -56,7 +56,7 @@ export const Login = () => {
                         <input type="password" className="imput" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                     </div>
                     <div className="button">
-                        <button onClick={registro}>iniciassssr</button>
+                        <button onClick={registro}>iniciaassssr</button>
                         <h4> User Logged In: </h4>
                         {user?.email}
 

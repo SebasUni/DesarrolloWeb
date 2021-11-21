@@ -13,7 +13,6 @@ export const mision = {
     'nuestros empleados, socios y proveedores.',
     imgStart: '',
     centrado:true
-    
   };
   export const vision={
     lightBg: false,
@@ -44,7 +43,6 @@ export const mision = {
     'para realizar todo el proceso de la fabricación de ollas en aluminio, se inician labores con '+
     'un promedio de cuarenta trabajadores; se constituyó la empresa ante cámara y comercio '+
     'de Bogotá el 15 de mayo de 2019.',
-   
     buttonLabel: '',
     img: 'images/empresa.JPG',
     alt: 'Credit Card',
