@@ -3,10 +3,12 @@ import {TableContainer, Table, TableHead,TableBody, TableCell, TableRow} from '@
 import './carrito.css'
 import Paypal_Check from './Paypal_Check'
 import {PDFExport} from '@progress/kendo-react-pdf'
+import { onAuthStateChanged, } from "firebase/auth";
 
 function Factura(props) {
+
   const [total, setTotal]=useState(0);
-  const cart=props.location.data.cart
+  const cart=props !== null ? props.location.data.cart : props
   useEffect(() => {
     const handlesumar = () => {
       const sumar = cart.map((saldo) => parseFloat(saldo.presio *saldo.cantidad))

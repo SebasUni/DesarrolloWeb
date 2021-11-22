@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './HeroSection.css';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
-
+import { projectFirestore as db } from '../components/firebase/config';
+import { collection, getDocs } from "firebase/firestore";
 function HeroSection({
   lightBg,    //color total
   topLine,   // titulo primario
@@ -18,6 +19,22 @@ function HeroSection({
   botton, //si hay boton
   centrado
 }) {
+  const [quotes, setQuotes] = useState([]);
+  useEffect(() => {
+    const obtenerDatos = async () => {
+      const documents = [];
+      const datos = await getDocs(collection(db, "Imagenes"));
+      datos.forEach((doc) => {
+        if (doc.id === img) {
+          documents.push({ id: doc.id, ...doc.data() });
+        }
+      });
+      setQuotes(documents);
+    }
+    obtenerDatos();
+
+  }, [])
+
   return (
     <>
       <div
@@ -72,7 +89,9 @@ function HeroSection({
               </div>
               <div className='col'>
                 <div className='home__hero-img-wrapper'>
-                  <img src={img} alt={alt} className='home__hero-img' />
+                  <img src={quotes.map((quote,idx)=>(
+                    quote.Url
+                  ))} alt={alt} className='home__hero-img' />
                 </div>
               </div>
             </div>

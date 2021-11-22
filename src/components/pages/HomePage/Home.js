@@ -5,7 +5,7 @@ import {homeObjOne} from './Data'
 //import PiePagina from '../../PiePagina'
 import {inf} from './Data'
 
-function Home() {
+function Home(props) {
     return (
         <>
             <HeroSection {...homeObjOne}/>

@@ -36,5 +36,50 @@
   width: 250px;
   height: 40px;
   padding: 16px 20px;
+  border:none;
+  margin-top: 20px;
+  box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
 
+}
+.Login{
+  border-radius: 20px;
+  width: 200px;
+  height: 50px;
+  border:none;
+  background-color:  #1c2237;
+  color: white;
+  margin-top: 40px;
+  box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+}
+@media screen and (max-width: 920px) {
+  .sub-main {
+    display: flex;
+    justify-content: center;
+    height: 550px;
+    width: 75%;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+    padding-top: 30px;
+    border-radius: 60px;
+    background-color: white;
+  }
+
+  .imput{
+    border-radius: 10px;
+    width: 230px;
+    height: 40px;
+    padding: 16px 20px;
+    border:none;
+    margin-top: 20px;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+  }
+  .Login{
+    border-radius: 20px;
+    width: 180px;
+    height: 50px;
+    border:none;
+    background-color:  #1c2237;
+    color: white;
+    margin-top: 40px;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+  }
 }

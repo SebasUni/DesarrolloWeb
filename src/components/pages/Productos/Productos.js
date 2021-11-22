@@ -17,10 +17,10 @@ export const  Productos =() => {
         datos.forEach((doc)=>{
             documents.push({id:doc.id, ...doc.data(),cantidad:1});
             
-            console.log(doc.id);
+           // console.log(doc.id);
         
         });
-    console.log(documents)
+    //console.log(documents)
     setQuotes(documents);
    }
    obtenerDatos();

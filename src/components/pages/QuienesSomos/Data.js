@@ -44,7 +44,7 @@ export const mision = {
     'un promedio de cuarenta trabajadores; se constituyó la empresa ante cámara y comercio '+
     'de Bogotá el 15 de mayo de 2019.',
     buttonLabel: '',
-    img: 'images/empresa.JPG',
+    img: 'Historia',
     alt: 'Credit Card',
     imgStart: 'start',
     path: '/servicios',

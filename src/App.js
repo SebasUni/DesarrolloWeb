@@ -1,32 +1,37 @@
+import React from 'react';
+import { Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import PiePagina from './components/PiePagina';
-import { BrowserRouter as Router, Switch,  Route } from
-'react-router-dom';
+import {Redirect} from'react-router-dom';
+import PrivatePagina from './routes/PrivateRoute';
 import Home from './components/pages/HomePage/Home';
-
+import PublicRoute from './routes/PublicRouter';
 import QuienesSomos from './components/pages/QuienesSomos/QuienesSomos';
 import Paypal_Check from './components/pages/Productos/Paypal_Check'
 import Factura from './components/pages/Productos/Factura'
 import {Productos} from './components/pages/Productos/Productos'
 import {Login} from './components/pages/Login/Login'
 
-
-
-function App() {
+function App(props) {
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route path="/" exact component={Home}/>
-        <Route path="/Quienes-Somos" component={QuienesSomos}/>
-        <Route path="/Productos" component={Productos}/>
-        <Route path="/Paypal_Check" component={Paypal_Check}/>
-        <Route path="/Factura" component={Factura}/>
-        <Route path="/sign-up" component={Login}/>
-      </Switch>
-      <PiePagina />
-    </Router>
+    <div>
+     
+          <Navbar />
+          <PublicRoute path="/" exact component={Home}/>
+          <PublicRoute path="/Quienes-Somos" component={QuienesSomos}/>
+          <PrivatePagina path="/Productos" component={Productos}/>
+          <PrivatePagina path="/Paypal_Check" component={Paypal_Check}/>
+          <PrivatePagina path="/Factura" component={Factura}/>
+          <PublicRoute path="/sign-up" component={Login}/>
+
+          <PiePagina />
+          <Redirect path="/" component={Home}/>
+
+        
+      
+      
+    </div>
   );
 }
 

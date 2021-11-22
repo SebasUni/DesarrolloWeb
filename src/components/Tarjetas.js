@@ -6,10 +6,10 @@ const Tarjetas = ({ producto, cart, setCart, productos }) => {
     const addProducto = (id) => {
         const producto = productos.filter((producto) => producto.id === id)
         const carrito = cart.filter((producto) => producto.id === id)
-        console.log(carrito)
+        //console.log(carrito)
         const productoCarrito = carrito.map((prod) => {
             if (prod.id === id) {
-                console.log(prod.cantidad)
+                //console.log(prod.cantidad)
                 return {
                     ...prod,
                     cantidad: prod.cantidad + 1,
@@ -19,20 +19,19 @@ const Tarjetas = ({ producto, cart, setCart, productos }) => {
 
         if (carrito.length === 0) {
             setCart([...cart, ...producto])
-            console.log("nada1")
+           
         } else {
             if (carrito[0].id === id) {
                 const nuevocart = cart.filter((producto) => producto.id !== id)
                 setNewprod(productoCarrito)
-                console.log(newprod)
+                
                 setCart(nuevocart)
                 setCart([...nuevocart, ...newprod])
-                console.log(cart)
+                
 
             } else {
                 setCart([...cart, ...producto])
-                console.log(newprod)
-                console.log("nada2")
+               
             }
         }
 
