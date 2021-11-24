@@ -1,7 +1,7 @@
 import React from 'react'
 import './Tarjetas.css'
 const Carro = ({ producto, cart, setCart, productos }) => {
-    const { name, presio, id, cantidad } = producto;
+    const { name, precio, id, cantidad } = producto;
     const Eliminar = (id) => {
         const producto = cart.filter((producto) => producto.id !== id)
         setCart(producto)
@@ -10,7 +10,7 @@ const Carro = ({ producto, cart, setCart, productos }) => {
         <div className="tarjeta" >
             <div className="info-Text">
                 <h5 className="Text-Button black" style={{ marginTop: 20 }}>{name}</h5>
-                <p className="Text-Button black">$ <span>{presio}</span></p>
+                <p className="Text-Button black">$ <span>{precio}</span></p>
                 <p className="Text-Button black">x <span>{cantidad}</span></p>
 
                 <button className="comprar" onClick={() => Eliminar(id)}>

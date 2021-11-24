@@ -11,7 +11,7 @@ function Factura(props) {
   const cart=props !== null ? props.location.data.cart : props
   useEffect(() => {
     const handlesumar = () => {
-      const sumar = cart.map((saldo) => parseFloat(saldo.presio *saldo.cantidad))
+      const sumar = cart.map((saldo) => parseFloat(saldo.precio *saldo.cantidad))
         .reduce((previous, current) => {
           return previous + current;
         }, 0);
@@ -31,7 +31,7 @@ function Factura(props) {
                   <TableRow>
                     <TableCell>Nombre</TableCell>
                     <TableCell>Cantidad</TableCell>
-                    <TableCell>Presio</TableCell>
+                    <TableCell>Precio</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -39,7 +39,7 @@ function Factura(props) {
                     <TableRow>
     <                   TableCell>{celda.name}</TableCell>
                         <TableCell>{celda.cantidad}</TableCell>
-                        <TableCell>{celda.presio * celda.cantidad}</TableCell>
+                        <TableCell>{celda.precio * celda.cantidad}</TableCell>
                     </TableRow>
                   ))}
                   <TableRow>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import PiePagina from './components/PiePagina';
@@ -16,7 +15,6 @@ import {Login} from './components/pages/Login/Login'
 function App(props) {
   return (
     <div>
-     
           <Navbar />
           <PublicRoute path="/" exact component={Home}/>
           <PublicRoute path="/Quienes-Somos" component={QuienesSomos}/>
@@ -24,13 +22,8 @@ function App(props) {
           <PrivatePagina path="/Paypal_Check" component={Paypal_Check}/>
           <PrivatePagina path="/Factura" component={Factura}/>
           <PublicRoute path="/sign-up" component={Login}/>
-
           <PiePagina />
           <Redirect path="/" component={Home}/>
-
-        
-      
-      
     </div>
   );
 }

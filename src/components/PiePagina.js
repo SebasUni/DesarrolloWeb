@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './PiePagina.css';
+import { projectFirestore as db } from '../components/firebase/config';
+import { collection, getDocs } from "firebase/firestore";
+function PiePagina() {
+    const [quotes, setQuotes] = useState([]);
+    useEffect(() => {
+        const obtenerDatos = async () => {
+            const documents = [];
+            const datos = await getDocs(collection(db, "Imagenes"));
+            datos.forEach((doc) => {
+                if (doc.id === "Ubicacion") {
+                    documents.push({ id: doc.id, ...doc.data() });
+                }
+            });
+            setQuotes(documents);
+        }
+        obtenerDatos();
 
-function PiePagina(
-    {
-        titulo,
-        descripcion
-    }
-) {
+    }, [])
     return (
         <div className='contenedor darkBg'>
             <div className="centrado izquierdo">
@@ -31,7 +42,9 @@ function PiePagina(
                     </div>
 
                 </div>
-                <img src={"http://localhost:3000/images/Ubicacion.png"} alt={"ubicacion"} className='UbicacionImagen' />
+                <img src={quotes.map((quote,idx)=>(
+                    quote.Url
+                    ))} alt={"ubicacion"} className='UbicacionImagen' />
 
 
             </div>

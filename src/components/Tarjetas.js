@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Tarjetas.css'
 const Tarjetas = ({ producto, cart, setCart, productos }) => {
-    const { name, presio, id } = producto;
+    const { name, precio, id } = producto;
     const [newprod, setNewprod] = useState([])
     const addProducto = (id) => {
         const producto = productos.filter((producto) => producto.id === id)
@@ -48,7 +48,7 @@ const Tarjetas = ({ producto, cart, setCart, productos }) => {
 
             <div className="info-Text">
                 <h5 className="Text-Button black">{name}</h5>
-                <p className="Text-Button black">$ <span>{presio}</span></p>
+                <p className="Text-Button black">$ <span>{precio}</span></p>
                 {productos ? (
                     <button className="comprar" onClick={() => addProducto(id)}>
                         <p className="Text-Button">Comprar</p>

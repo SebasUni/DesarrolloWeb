@@ -1,3 +1,5 @@
+
+//HOME, EXPLICACION DE LA EMPRESA
 export const homeObjOne = {
     lightBg: false,
     lightText: true,
@@ -18,6 +20,7 @@ export const homeObjOne = {
     botton: true,
     centrado:false,
   };
+  //INFORMACION EXTRA DEL HOME
   export const inf = {
     lightBg: true,
     lightText: false,
@@ -25,7 +28,7 @@ export const homeObjOne = {
     topLine: 'Caldero extrafuerte',
     headline: 'ALUMINOS JOAL HS S.A.S',
     description:
-    'Fabricamos utensilios de cocina en aluminio de excelente calidad a precios competitivos,'+ 
+    'Fabricamos utensilios de cocina en aluminio de excelente calidad a precios competitivos,'+
     'prestando el mejor serivio y atención a todos nuestros clientes, asegurandonos cada de ser el numero 1 en el mercado',
     buttonLabel: 'Contactanos',
     imgStart: 'start',

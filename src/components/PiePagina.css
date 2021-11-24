@@ -63,13 +63,14 @@
         height: 200px;
         float: none;
         margin-top: 20px;
+        margin-left: -20px;
     }
     .textoinfo{
         margin-top: 15px;
-        margin-left: 40px;
+        margin-left: -20px;
     }
     .titulo{
-        margin-left: 40px;
+        margin-left: 0px;
     }
 
 }
