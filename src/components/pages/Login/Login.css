@@ -9,7 +9,7 @@
   .sub-main {
     display: flex;
     justify-content: center;
-    height: 550px;
+    height: 750px;
     width: 35%;
     box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
     padding-top: 30px;
@@ -51,11 +51,22 @@
   margin-top: 40px;
   box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
 }
+.registros {
+  margin-top: 30px;
+  text-decoration: underline;
+  color: blue;
+}
+.registros:hover {
+  margin-top: 30px;
+  color: #1c2237;
+  text-decoration: none;
+  font-size: 20px;
+}
 @media screen and (max-width: 920px) {
   .sub-main {
     display: flex;
     justify-content: center;
-    height: 550px;
+    height: 750px;
     width: 75%;
     box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
     padding-top: 30px;

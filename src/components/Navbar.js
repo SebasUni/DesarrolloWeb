@@ -57,9 +57,8 @@ const closeMobileMeunu =()=>setClick(false)
                             </Link>
                         ):(
                             <Link  to='/sign-up' className="btn-link" onClick={closeMobileMeunu}>
-                                <Button buttonStyle='btn--outline'
-                                buttonSize='btn-mobile'
-                                >SIGN UP</Button>
+                                
+                                <Button buttonStyle='btn--outline'buttonSize='btn-mobile'>SIGN UP</Button>
                             </Link>
                         )}
                     </li>
