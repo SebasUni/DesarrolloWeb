@@ -29,8 +29,8 @@ export const Productos = () => {
 
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
-  
-});
+
+  });
   const [cart, setCart] = useState([]);
 
   return (
@@ -65,7 +65,7 @@ export const Productos = () => {
 
 
       <div className="container">
-        
+
         <Cart
           id={cart.id}
           cart={cart}
@@ -75,29 +75,29 @@ export const Productos = () => {
       </div>
 
       <div className="container">
-        {user ? 
-        <div className="d">
-           <Link to={{
-          pathname: "/Factura",
-          data: { cart }
-        }}>
-          <button className="container Irpagar">
-            Terminar comprar
-          </button>
-        </Link>
-        </div>
-        : <div className="d">
-        <Link to={{
-       pathname: "/sign-up",
-      
-     }}>
-       <button className="container Irpagar">{localStorage.setItem("Productos", cart)}
-         Registarte para realizar la compra
-       </button>
-       {console.log(localStorage.getItem("Productos"))}
-     </Link>
-     </div>}
-       
+        {user ?
+          <div className="d">
+            <Link to={{
+              pathname: "/Factura",
+              data: { cart }
+            }}>
+              <button className="container Irpagar">
+                Terminar comprar
+              </button>
+            </Link>
+          </div>
+          : <div className="d">
+            <Link to={{
+              pathname: "/sign-up",
+
+            }}>
+              <button className="container Irpagar">{localStorage.setItem("Productos", cart)}
+                Registarte para realizar la compra
+              </button>
+              {console.log(localStorage.getItem("Productos"))}
+            </Link>
+          </div>}
+
 
 
 

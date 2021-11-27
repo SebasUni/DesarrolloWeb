@@ -6,18 +6,18 @@ import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 const containerStyle = {
     width: '350px',
     height: '200px'
-  };
-  
-  const center = {
-    lat: 4.643085 ,
+};
+
+const center = {
+    lat: 4.643085,
     lng: -74.196057
-  };
-  
+};
+
 function PiePagina() {
-    // const { isLoaded } = useJsApiLoader({
-    //     id: 'google-map-script',
-    //     googleMapsApiKey: "AIzaSyC3SG2Ha8bFtXHN3zdx143Dgre_QEL5x7w"
-    // })
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: "AIzaSyC3SG2Ha8bFtXHN3zdx143Dgre_QEL5x7w"
+    })
 
 
 
@@ -48,23 +48,23 @@ function PiePagina() {
                 {/* <img src={quotes.map((quote,idx)=>(
                     quote.Url
                     ))} alt={"ubicacion"} className='UbicacionImagen' /> */}
-                {/* {isLoaded ? (
+                {isLoaded ? (
                     <div className="UbicacionImagen">
-                <GoogleMap
-                    mapContainerStyle={containerStyle}
-                    center={center}
-                    zoom={20}
-                    
-                >
-                    <Marker position={center}/>
-                   
-                    <></>
-                </GoogleMap>
+                        <GoogleMap
+                            mapContainerStyle={containerStyle}
+                            center={center}
+                            zoom={20}
+
+                        >
+                            <Marker position={center} />
+
+                            <></>
+                        </GoogleMap>
                     </div>
-                
-            ) : <></>} */}
+
+                ) : <></>}
             </div>
-            
+
 
 
         </div>

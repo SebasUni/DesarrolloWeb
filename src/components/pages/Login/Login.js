@@ -5,7 +5,7 @@ import { auth } from '../../firebase/config'
 import { projectFirestore as db } from '../../firebase/config'
 import { doc, setDoc, updateDoc, getDoc } from "firebase/firestore";
 import { onAuthStateChanged, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import { GoogleAuthProvider, getAuth, signInWithPopup,sendPasswordResetEmail  } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup, sendPasswordResetEmail } from "firebase/auth";
 import GoogleButton from 'react-google-button'
 import Informacion from '../Informacion/Informacion';
 import emailjs from 'emailjs-com';
@@ -31,7 +31,8 @@ export const Login = () => {
         obtenerestado();
     });
     const login = async () => {
-        if (user !== "" && captcha.current.getValue()) {
+        // && captcha.current.getValue()
+        if (user !== "") {
             cambiarCaptchaValido(true)
             try {
                 const usuario = await signInWithEmailAndPassword(
@@ -46,9 +47,9 @@ export const Login = () => {
                     const documents = [];
                     const datos = await getDoc(doc(db, "users", usuario.user.uid));
                     documents.push(datos.data())
-                   // console.log(documents)
-                   // setInfouser(datos.data())
-                   // console.log(infouser)
+                    // console.log(documents)
+                    // setInfouser(datos.data())
+                    // console.log(infouser)
                     localStorage.setItem("email", datos.data().email)
                     localStorage.setItem("name", datos.data().name)
                     ReactDOM.render(datos.data().name, document.getElementById('namesss'));
@@ -60,13 +61,13 @@ export const Login = () => {
                         localStorage.setItem("id", false)
                         setEstado(false)
                     }
-                   // console.log(localStorage.getItem("id"))
+                    // console.log(localStorage.getItem("id"))
                 }
                 obtenerDatos()
             } catch (error) {
                 alert("aaa" + error.message)
             }
-        }else{
+        } else {
             cambiarCaptchaValido(false)
         }
     }
@@ -169,72 +170,72 @@ export const Login = () => {
     const infUser = () => {
         const obtenerDatos = async () => {
             const documents = [];
-            
-            try{
+
+            try {
                 const datos = await getDoc(doc(db, "users", user.uid));
                 documents.push(datos.data())
                 //console.log(documents)
                 ReactDOM.render(datos.data().name, document.getElementById('namesss'));
                 ReactDOM.render(datos.data().email, document.getElementById('infEmail'));
-            }catch(e){
+            } catch (e) {
 
             }
-            
-            
-            
+
+
+
         }
-       if(user && name){
-          
-           obtenerDatos();
-       }
+        if (user && name) {
+
+            obtenerDatos();
+        }
     }
-    const recuperarContraseña=()=>{
-        if(uemail){
+    const recuperarContraseña = () => {
+        if (uemail) {
             sendPasswordResetEmail(auth, uemail)
-            .then(() => {
-              // Password reset email sent!
-              alert("Revisa tu correo")
-            })
-            .catch((error) => {
-              const errorCode = error.code;
-              const errorMessage = error.message;
-              // ..
-            });
-        }else{
+                .then(() => {
+                    // Password reset email sent!
+                    alert("Revisa tu correo")
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // ..
+                });
+        } else {
             alert("Ingrese el correo")
         }
 
     }
     const sendEmail = (email) => {
         var templateParams = {
-           emaildestino: email,
+            emaildestino: email,
             subject: 'Creacion de cuenta ',
-            mensaje:  "se ha creo la cuenta exitosamente "
+            mensaje: "se ha creo la cuenta exitosamente "
         };
-      
-      
+
+
         emailjs.send('service_n7lwv3n', 'template_t4i8t9h', templateParams, 'user_4kjYwhFJbiGpFOvJbimkC')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
                 console.log(error.text);
             });
-      };
-      const [captchaValido, cambiarCaptchaValido]= useState(null);
-     
-      const captcha = useRef(null);
-      const onChange=()=>{
-          console.log (captcha.current.getValue())
-          cambiarCaptchaValido(true)
-      }
+    };
+    const [captchaValido, cambiarCaptchaValido] = useState(null);
+
+    const captcha = useRef(null);
+    const onChange = () => {
+        console.log(captcha.current.getValue())
+        cambiarCaptchaValido(true)
+    }
     return (
         <div className="main">
             {user ?
                 <div className="container">
                     {infUser()}
                     <div className="container-image">
-                            <img src="/images/loginn/user.png" alt="user" className="imgs" />
-                        </div>
+                        <img src="/images/loginn/user.png" alt="user" className="imgs" />
+                    </div>
                     <p id={"namesss"} className={"informacionRegistro"}></p>
                     <p id={"infEmail"} className={"informacionRegistro"}></p>
                     <button className="Login" onClick={logout} >Salir</button>
@@ -267,7 +268,7 @@ export const Login = () => {
                                 : ""}
                         </div>
                         <div className="d">
-                            <input type="email" id={"email"}className="imput" placeholder="email" value={uemail} onChange={(e) => setUemail(e.target.value)}></input>
+                            <input type="email" id={"email"} className="imput" placeholder="email" value={uemail} onChange={(e) => setUemail(e.target.value)}></input>
 
                         </div>
                         <div className="d">
@@ -278,13 +279,13 @@ export const Login = () => {
                             <a onClick={recuperarContraseña}>Olvidaste tu contraseña</a>
                         </div>
                         <div className="recaptcha">
-                        <ReCAPTCHA
-                            ref={captcha}
-                            sitekey="6Lez72AdAAAAAOM-HJGVXgfrdOmyGQims_fFq4lH"
-                            onChange={onChange}
-                        />
-					    </div>
-                               {captchaValido ===false ? <div className="error-captcha">Por favor acepta el captcha</div>:""}
+                            <ReCAPTCHA
+                                ref={captcha}
+                                sitekey="6Lez72AdAAAAAOM-HJGVXgfrdOmyGQims_fFq4lH"
+                                onChange={onChange}
+                            />
+                        </div>
+                        {captchaValido === false ? <div className="error-captcha">Por favor acepta el captcha</div> : ""}
                         <div className="button">
                             {estadoregistro ? (
                                 <div className="d">
@@ -300,8 +301,8 @@ export const Login = () => {
                                 )}
 
                         </div>
-                        
-                        
+
+
                         <div className="registros">
                             <a onClick={SolicitudRegistro}>Crear cuenta</a>
                         </div>
@@ -316,7 +317,7 @@ export const Login = () => {
                 </div>
 
             }
-    
+
         </div>
     )
 }

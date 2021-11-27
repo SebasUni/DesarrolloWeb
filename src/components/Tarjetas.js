@@ -19,19 +19,19 @@ const Tarjetas = ({ producto, cart, setCart, productos }) => {
 
         if (carrito.length === 0) {
             setCart([...cart, ...producto])
-           
+
         } else {
             if (carrito[0].id === id) {
                 const nuevocart = cart.filter((producto) => producto.id !== id)
                 setNewprod(productoCarrito)
-                
+
                 setCart(nuevocart)
                 setCart([...nuevocart, ...newprod])
-                
+
 
             } else {
                 setCart([...cart, ...producto])
-               
+
             }
         }
 
