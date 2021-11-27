@@ -24,7 +24,7 @@ function App(props) {
           <Navbar />
           <PublicRoute path="/" exact component={Home}/>
           <PublicRoute path="/Quienes-Somos" component={QuienesSomos}/>
-          <PrivatePagina path="/Productos" component={Productos}/>
+          <PublicRoute path="/Productos" component={Productos}/>
           <PrivatePagina path="/Paypal_Check" component={Paypal_Check}/>
           <PrivatePagina path="/Factura" component={Factura}/>
           <PublicRoute path="/sign-up" component={Login}/>

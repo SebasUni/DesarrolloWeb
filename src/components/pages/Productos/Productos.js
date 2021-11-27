@@ -3,13 +3,14 @@ import { projectFirestore as db } from '../../firebase/config';
 import { collection, getDocs } from "firebase/firestore";
 import Tarjeta from '../../Tarjetas'
 import Cart from "./Cart"
-
+import { onAuthStateChanged, } from "firebase/auth";
 import './carrito.css'
 import { Link } from 'react-router-dom';
+import { auth } from '../../firebase/config'
 
 export const Productos = () => {
   const [quotes, setQuotes] = useState([]);
-
+  const [user, setUser] = useState({})
   useEffect(() => {
     const obtenerDatos = async () => {
       const documents = [];
@@ -26,8 +27,12 @@ export const Productos = () => {
     obtenerDatos();
   }, [])
 
-
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  
+});
   const [cart, setCart] = useState([]);
+
   return (
     <div>
 
@@ -60,6 +65,7 @@ export const Productos = () => {
 
 
       <div className="container">
+        
         <Cart
           id={cart.id}
           cart={cart}
@@ -69,7 +75,9 @@ export const Productos = () => {
       </div>
 
       <div className="container">
-        <Link to={{
+        {user ? 
+        <div className="d">
+           <Link to={{
           pathname: "/Factura",
           data: { cart }
         }}>
@@ -77,6 +85,19 @@ export const Productos = () => {
             Terminar comprar
           </button>
         </Link>
+        </div>
+        : <div className="d">
+        <Link to={{
+       pathname: "/sign-up",
+      
+     }}>
+       <button className="container Irpagar">{localStorage.setItem("Productos", cart)}
+         Registarte para realizar la compra
+       </button>
+       {console.log(localStorage.getItem("Productos"))}
+     </Link>
+     </div>}
+       
 
 
 

@@ -5,6 +5,7 @@ import Paypal_Check from './Paypal_Check'
 import {PDFExport} from '@progress/kendo-react-pdf'
 import { onAuthStateChanged, } from "firebase/auth";
 
+
 function Factura(props) {
 
   const [total, setTotal]=useState(0);
@@ -19,6 +20,10 @@ function Factura(props) {
     };
     handlesumar();
   });
+
+  
+  
+console.log(localStorage.getItem("email"))
   const pdfExportComponent = useRef(null)
     return (
       <div >
@@ -51,10 +56,13 @@ function Factura(props) {
               </Table>
             </TableContainer>
             <div className="pagar">
-            <Paypal_Check order={cart} total={total} pdfExportComponent={pdfExportComponent}/>
+           <Paypal_Check order={cart} total={total} pdfExportComponent={pdfExportComponent}/>
             </div>
         </div>
         </PDFExport>
+        <div className="d">
+          
+        </div>
       </div>
     )
 }

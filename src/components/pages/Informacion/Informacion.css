@@ -45,6 +45,14 @@ background-color:#1c223769 ;
     margin-right: auto;
     max-width: 1500px;
 }
+.FechaOrgani{
+    margin-left: 100px;
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 5px 20px;
+    box-shadow: 11px 12px 13px 12px rgba(207, 207, 207, 0.116);
+    margin-top: 20px;
+}
 @media screen and (max-width: 900px) {
     .Conteinergrafica{
         margin-top: 20px;

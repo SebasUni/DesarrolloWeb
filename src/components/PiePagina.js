@@ -2,22 +2,25 @@ import React, { useEffect, useState } from 'react'
 import './PiePagina.css';
 import { projectFirestore as db } from '../components/firebase/config';
 import { collection, getDocs } from "firebase/firestore";
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+const containerStyle = {
+    width: '350px',
+    height: '200px'
+  };
+  
+  const center = {
+    lat: 4.643085 ,
+    lng: -74.196057
+  };
+  
 function PiePagina() {
-    const [quotes, setQuotes] = useState([]);
-    useEffect(() => {
-        const obtenerDatos = async () => {
-            const documents = [];
-            const datos = await getDocs(collection(db, "Imagenes"));
-            datos.forEach((doc) => {
-                if (doc.id === "Ubicacion") {
-                    documents.push({ id: doc.id, ...doc.data() });
-                }
-            });
-            setQuotes(documents);
-        }
-        obtenerDatos();
+    // const { isLoaded } = useJsApiLoader({
+    //     id: 'google-map-script',
+    //     googleMapsApiKey: "AIzaSyC3SG2Ha8bFtXHN3zdx143Dgre_QEL5x7w"
+    // })
 
-    }, [])
+
+
     return (
         <div className='contenedor darkBg'>
             <div className="centrado izquierdo">
@@ -42,13 +45,26 @@ function PiePagina() {
                     </div>
 
                 </div>
-                <img src={quotes.map((quote,idx)=>(
+                {/* <img src={quotes.map((quote,idx)=>(
                     quote.Url
-                    ))} alt={"ubicacion"} className='UbicacionImagen' />
-
-
+                    ))} alt={"ubicacion"} className='UbicacionImagen' /> */}
+                {/* {isLoaded ? (
+                    <div className="UbicacionImagen">
+                <GoogleMap
+                    mapContainerStyle={containerStyle}
+                    center={center}
+                    zoom={20}
+                    
+                >
+                    <Marker position={center}/>
+                   
+                    <></>
+                </GoogleMap>
+                    </div>
+                
+            ) : <></>} */}
             </div>
-
+            
 
 
         </div>
