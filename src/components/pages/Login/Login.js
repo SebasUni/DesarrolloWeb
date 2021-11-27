@@ -267,11 +267,11 @@ export const Login = () => {
                                 : ""}
                         </div>
                         <div className="d">
-                            <input type="email" className="imput" placeholder="email" value={uemail} onChange={(e) => setUemail(e.target.value)}></input>
+                            <input type="email" id={"email"}className="imput" placeholder="email" value={uemail} onChange={(e) => setUemail(e.target.value)}></input>
 
                         </div>
                         <div className="d">
-                            <input type="password" className="imput" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                            <input type="password" id={"password"} className="imput" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
 
                         </div>
                         <div className="registros">
